@@ -1,4 +1,7 @@
 package Sorting;
+/* after completion of iteration we will find the smallest element index 
+*then we swap the smallest element with the element present at arr[i]
+*/
 
 public class SelectionSort {
 	 
