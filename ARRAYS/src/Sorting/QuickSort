@@ -1,0 +1,60 @@
+public class Main
+{
+  public static void main (String[]args)
+  {
+    int arr[] = { 10, 4, 8, 9, 3, 6, 16, 12, 17 };
+    Quicksort (arr, 0, arr.length - 1);
+    for (int i = 0; i < arr.length; i++)
+      {
+	System.out.print (arr[i] + " ");
+      }
+
+  }
+  public static void Quicksort (int arr[], int low, int high)
+  {
+    if (low < high)
+      {
+	int j = partion (arr, low, high);
+	Quicksort (arr, low, j);
+	Quicksort (arr, j + 1, high);
+      }
+}
+
+    public static int partion (int arr[], int low, int high)
+    {
+      int pivot = arr[low];
+      int i = low;
+      int j = high;
+      while (i < j)
+	{
+
+	  do
+	    {
+	      i++;
+
+	    }
+	  while (arr[i] <= pivot);
+
+	  do
+	    {
+	      j--;
+	    }
+	  while (arr[j] >pivot);
+
+	  if (i < j)
+	    {			// here we are swapping arr[i] and arr[j]
+	      int temp = arr[i];
+	      arr[i] = arr[j];
+	      arr[j] = temp;
+	    }
+
+	}
+      int temp = arr[low];		// here we are swapping pivot element i.e., arr[low] and arr[j] because we taken j such way that it will find element lessen than pivot
+      arr[low] = arr[j];
+      arr[j] = temp;
+
+      return j;			//this line returns pivot element index to th quick sort function
+
+    }
+
+  }
